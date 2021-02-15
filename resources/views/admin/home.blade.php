@@ -13,7 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <div class="alert alert-info">
+                        Records displayed below are retrieved from <strong>API Data Sheet </strong>
+                    </div>
                     <table class="table">
                         <thead>
                             <tr>
@@ -26,16 +28,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            @foreach($values as $value)
+                        @foreach($values as $value)
+                            <tr>                            
                                 <th scope="row">{{$loop->iteration}}.</th>
                                 <td>{{ data_get($value, 'name') }}</td>
                                 <td style="text-align:center">{{ data_get($value, 'triangle_score') }}</td>
                                 <td style="text-align:center">{{ data_get($value, 'squiggle_score') }}</td>
                                 <td style="text-align:center">{{ data_get($value, 'box_score') }}</td>
-                                <td style="text-align:center">{{ data_get($value, 'circle_score') }}</td>
-                            @endforeach
-                            </tr>                            
+                                <td style="text-align:center">{{ data_get($value, 'circle_score') }}</td>                            
+                            </tr>       
+                        @endforeach                     
                         </tbody>
                     </table>
                 </div>

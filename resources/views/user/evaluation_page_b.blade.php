@@ -72,11 +72,21 @@
                                 </td>  
                             </tr>
                         </table>
-                        <button type="submit" class="btn btn-danger">Submit</button>
+                        <button type="submit" class="btn btn-danger" onclick="clicked(event)">Get results</button>
                     <form>                        
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+@section('scripts')
+<script>
+    function clicked(e)
+    {
+        if(!confirm('HIGH ALERT! Make sure you have selected an answer on each line. Once you click OK submitted, your answers cannot be modified!')) {
+            e.preventDefault();
+        }
+    }
+</script>
 @endsection
